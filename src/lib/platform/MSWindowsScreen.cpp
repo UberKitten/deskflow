@@ -670,12 +670,34 @@ bool MSWindowsScreen::isAnyMouseButtonDown(uint32_t &buttonID) const
   static const char *buttonToName[] = {"<invalid>",    "Left Button", "Middle Button",
                                        "Right Button", "X Button 1",  "X Button 2"};
 
-  for (uint32_t i = 1; i < sizeof(m_buttons) / sizeof(m_buttons[0]); ++i) {
-    if (m_buttons[i]) {
-      buttonID = i;
-      LOG_DEBUG("locked by \"%s\"", buttonToName[i]);
-      return true;
-    }
+  // Query real-time button state to avoid stale cached state (e.g., after
+  // secure desktop/UAC switches where we can miss mouse-up events).
+  const int numButtons = GetSystemMetrics(SM_CMOUSEBUTTONS);
+
+  if (GetKeyState(VK_LBUTTON) < 0) {
+    buttonID = kButtonLeft;
+    LOG_DEBUG("locked by \"%s\"", buttonToName[buttonID]);
+    return true;
+  }
+  if (GetKeyState(VK_MBUTTON) < 0) {
+    buttonID = kButtonMiddle;
+    LOG_DEBUG("locked by \"%s\"", buttonToName[buttonID]);
+    return true;
+  }
+  if (GetKeyState(VK_RBUTTON) < 0) {
+    buttonID = kButtonRight;
+    LOG_DEBUG("locked by \"%s\"", buttonToName[buttonID]);
+    return true;
+  }
+  if (numButtons >= 4 && GetKeyState(VK_XBUTTON1) < 0) {
+    buttonID = kButtonExtra0;
+    LOG_DEBUG("locked by \"%s\"", buttonToName[buttonID]);
+    return true;
+  }
+  if (numButtons >= 5 && GetKeyState(VK_XBUTTON2) < 0) {
+    buttonID = kButtonExtra1;
+    LOG_DEBUG("locked by \"%s\"", buttonToName[buttonID]);
+    return true;
   }
 
   return false;
@@ -1366,8 +1388,9 @@ void MSWindowsScreen::warpCursorNoFlush(int32_t x, int32_t y)
 
   // there is a bug or round error in SetCursorPos and GetCursorPos on
   // a high DPI setting. The check here is for Vista/7 login screen.
-  // since this feature is mainly for client, so only check on client.
-  if (!isPrimary()) {
+  // also applies when the primary screen is controlling a secondary screen
+  // and SetCursorPos can fail after secure desktop transitions.
+  if (!m_isOnScreen) {
     if ((cursorPos.x != x) && (cursorPos.y != y)) {
       LOG_DEBUG("function 'SetCursorPos' failed; trying 'fakeMouseMove'");
       LOG_DEBUG("cursor pos %d, %d expected pos %d, %d", cursorPos.x, cursorPos.y, x, y);
