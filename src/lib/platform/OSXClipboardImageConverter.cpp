@@ -155,7 +155,8 @@ static CGImageRef createCGImageFromDIB(const std::string &dib)
 
   CGDataProviderRef provider = CGDataProviderCreateWithCFData(dataRef);
   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-  CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst;
+  CGBitmapInfo bitmapInfo =
+      static_cast<CGBitmapInfo>(kCGBitmapByteOrder32Little) | static_cast<CGBitmapInfo>(kCGImageAlphaPremultipliedFirst);
 
   CGImageRef image = CGImageCreate(
       width, height, 8, 32, dstRowBytes, colorSpace, bitmapInfo, provider, nullptr, false, kCGRenderingIntentDefault
@@ -184,10 +185,9 @@ static std::string createDIBFromCGImage(CGImageRef image)
   std::vector<uint8_t> pixels(rowBytes * height);
 
   CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-  CGContextRef ctx = CGBitmapContextCreate(
-      pixels.data(), width, height, 8, rowBytes, colorSpace,
-      kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst
-  );
+  CGBitmapInfo contextInfo =
+      static_cast<CGBitmapInfo>(kCGBitmapByteOrder32Little) | static_cast<CGBitmapInfo>(kCGImageAlphaPremultipliedFirst);
+  CGContextRef ctx = CGBitmapContextCreate(pixels.data(), width, height, 8, rowBytes, colorSpace, contextInfo);
   CGColorSpaceRelease(colorSpace);
 
   if (!ctx) {
