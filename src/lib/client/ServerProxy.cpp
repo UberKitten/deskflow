@@ -18,10 +18,9 @@
 #include "deskflow/ProtocolTypes.h"
 #include "deskflow/ProtocolUtil.h"
 #include "deskflow/StreamChunker.h"
-
-#include <chrono>
 #include "io/IStream.h"
 
+#include <chrono>
 #include <cstring>
 
 //
@@ -534,20 +533,19 @@ void ServerProxy::setClipboard()
     size_t size = ClipboardChunk::getExpectedSize();
     LOG_DEBUG("receiving clipboard %d size=%d", id, size);
   } else if (r == TransferState::Finished) {
-    const auto elapsedMs = std::chrono::duration_cast<std::chrono::milliseconds>(
-                                std::chrono::steady_clock::now() - start
-                            ).count();
-    LOG_DEBUG("received clipboard %d size=%d (assemble %lld ms)", id, dataCached.size(),
-              static_cast<long long>(elapsedMs));
+    const auto elapsedMs =
+        std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - start).count();
+    LOG_DEBUG(
+        "received clipboard %d size=%d (assemble %lld ms)", id, dataCached.size(), static_cast<long long>(elapsedMs)
+    );
 
     const auto convertStart = std::chrono::steady_clock::now();
     // forward
     Clipboard clipboard;
     clipboard.unmarshall(dataCached, 0);
     m_client->setClipboard(id, &clipboard);
-    const auto convertMs = std::chrono::duration_cast<std::chrono::milliseconds>(
-                               std::chrono::steady_clock::now() - convertStart
-                           ).count();
+    const auto convertMs =
+        std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - convertStart).count();
 
     LOG_INFO("clipboard was updated (apply %lld ms)", static_cast<long long>(convertMs));
   }

@@ -15,7 +15,8 @@
 
 namespace {
 
-struct CBMPInfoHeader {
+struct CBMPInfoHeader
+{
   uint32_t biSize;
   int32_t biWidth;
   int32_t biHeight;
@@ -37,8 +38,8 @@ static inline uint16_t fromLEU16(const uint8_t *data)
 static inline int32_t fromLES32(const uint8_t *data)
 {
   return static_cast<int32_t>(
-      static_cast<uint32_t>(data[0]) | (static_cast<uint32_t>(data[1]) << 8) |
-      (static_cast<uint32_t>(data[2]) << 16) | (static_cast<uint32_t>(data[3]) << 24)
+      static_cast<uint32_t>(data[0]) | (static_cast<uint32_t>(data[1]) << 8) | (static_cast<uint32_t>(data[2]) << 16) |
+      (static_cast<uint32_t>(data[3]) << 24)
   );
 }
 
@@ -103,8 +104,7 @@ static CGImageRef createCGImageFromDIB(const std::string &dib)
   }
 
   constexpr uint32_t kBI_RGB = 0;
-  if (info.biPlanes != 1 || info.biCompression != kBI_RGB ||
-      (info.biBitCount != 24 && info.biBitCount != 32) ||
+  if (info.biPlanes != 1 || info.biCompression != kBI_RGB || (info.biBitCount != 24 && info.biBitCount != 32) ||
       info.biWidth == 0 || info.biHeight == 0) {
     return nullptr;
   }
@@ -118,9 +118,8 @@ static CGImageRef createCGImageFromDIB(const std::string &dib)
     return nullptr;
   }
 
-  const size_t srcRowBytes = (info.biBitCount == 24)
-                                 ? ((static_cast<size_t>(width) * 3 + 3) & ~3u)
-                                 : (static_cast<size_t>(width) * 4);
+  const size_t srcRowBytes =
+      (info.biBitCount == 24) ? ((static_cast<size_t>(width) * 3 + 3) & ~3u) : (static_cast<size_t>(width) * 4);
   const uint8_t *src = reinterpret_cast<const uint8_t *>(dib.data()) + headerSize;
 
   std::vector<uint8_t> pixels(static_cast<size_t>(width) * static_cast<size_t>(height) * 4);
@@ -160,8 +159,7 @@ static CGImageRef createCGImageFromDIB(const std::string &dib)
   CGBitmapInfo bitmapInfo = kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst;
 
   CGImageRef image = CGImageCreate(
-      width, height, 8, 32, dstRowBytes, colorSpace, bitmapInfo, provider, nullptr, false,
-      kCGRenderingIntentDefault
+      width, height, 8, 32, dstRowBytes, colorSpace, bitmapInfo, provider, nullptr, false, kCGRenderingIntentDefault
   );
 
   CGColorSpaceRelease(colorSpace);
