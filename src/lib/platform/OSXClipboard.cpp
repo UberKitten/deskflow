@@ -16,7 +16,6 @@
 #include "platform/OSXClipboardUTF16Converter.h"
 #include "platform/OSXClipboardUTF8Converter.h"
 
-
 //
 // OSXClipboard
 //
