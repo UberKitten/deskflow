@@ -89,7 +89,7 @@ static const double kKeepAliveRate = 3.0;
  * @see kMsgCKeepAlive
  * @since Protocol version 1.3
  */
-static const double kKeepAlivesUntilDeath = 3.0;
+static const double kKeepAlivesUntilDeath = 10.0;
 
 /**
  * @brief Obsolete heartbeat rate (deprecated)
