@@ -9,7 +9,6 @@
 
 #include <CoreGraphics/CoreGraphics.h>
 #include <ImageIO/ImageIO.h>
-#include <MobileCoreServices/MobileCoreServices.h>
 
 #include <vector>
 
