@@ -55,6 +55,8 @@ var dir_9d41f2d9dd9f152ba43e738700883d1e =
     [ "OSXClipboardBMPConverter.h", "OSXClipboardBMPConverter_8h.html", "OSXClipboardBMPConverter_8h" ],
     [ "OSXClipboardHTMLConverter.cpp", "OSXClipboardHTMLConverter_8cpp.html", null ],
     [ "OSXClipboardHTMLConverter.h", "OSXClipboardHTMLConverter_8h.html", "OSXClipboardHTMLConverter_8h" ],
+    [ "OSXClipboardImageConverter.cpp", "OSXClipboardImageConverter_8cpp.html", null ],
+    [ "OSXClipboardImageConverter.h", "OSXClipboardImageConverter_8h.html", "OSXClipboardImageConverter_8h" ],
     [ "OSXClipboardTextConverter.cpp", "OSXClipboardTextConverter_8cpp.html", null ],
     [ "OSXClipboardTextConverter.h", "OSXClipboardTextConverter_8h.html", "OSXClipboardTextConverter_8h" ],
     [ "OSXClipboardUTF16Converter.cpp", "OSXClipboardUTF16Converter_8cpp.html", null ],

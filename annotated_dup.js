@@ -235,6 +235,7 @@ var annotated_dup =
     [ "OSXClipboardAnyTextConverter", "classOSXClipboardAnyTextConverter.html", "classOSXClipboardAnyTextConverter" ],
     [ "OSXClipboardBMPConverter", "classOSXClipboardBMPConverter.html", "classOSXClipboardBMPConverter" ],
     [ "OSXClipboardHTMLConverter", "classOSXClipboardHTMLConverter.html", "classOSXClipboardHTMLConverter" ],
+    [ "OSXClipboardImageConverter", "classOSXClipboardImageConverter.html", "classOSXClipboardImageConverter" ],
     [ "OSXClipboardTextConverter", "classOSXClipboardTextConverter.html", "classOSXClipboardTextConverter" ],
     [ "OSXClipboardUTF16Converter", "classOSXClipboardUTF16Converter.html", "classOSXClipboardUTF16Converter" ],
     [ "OSXClipboardUTF8Converter", "classOSXClipboardUTF8Converter.html", "classOSXClipboardUTF8Converter" ],

@@ -184,7 +184,8 @@ var hierarchy =
         [ "OSXClipboardUTF16Converter", "classOSXClipboardUTF16Converter.html", null ],
         [ "OSXClipboardUTF8Converter", "classOSXClipboardUTF8Converter.html", null ]
       ] ],
-      [ "OSXClipboardBMPConverter", "classOSXClipboardBMPConverter.html", null ]
+      [ "OSXClipboardBMPConverter", "classOSXClipboardBMPConverter.html", null ],
+      [ "OSXClipboardImageConverter", "classOSXClipboardImageConverter.html", null ]
     ] ],
     [ "IOSXKeyResource", "classIOSXKeyResource.html", [
       [ "OSXUchrKeyResource", "classOSXUchrKeyResource.html", null ]

@@ -28,7 +28,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="deskflow-logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Deskflow<span id="projectnumber">&#160;1.25.0.248</span>
+   <div id="projectname">Deskflow<span id="projectnumber">&#160;1.25.0.256</span>
    </div>
    <div id="projectbrief">Keyboard and mouse sharing utility</div>
   </td>
@@ -104,21 +104,23 @@ Inheritance diagram for IOSXClipboardConverter:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIOSXClipboardConverter__inherit__graph.png" border="0" usemap="#aIOSXClipboardConverter_inherit__map" loading="lazy" alt="Inheritance graph"/></div>
 <map name="aIOSXClipboardConverter_inherit__map" id="aIOSXClipboardConverter_inherit__map">
-<area shape="rect" title="Clipboard format converter interface." alt="" coords="5,80,170,105"/>
-<area shape="rect" href="classOSXClipboardAnyBitmapConverter.html" title="Convert to/from some text encoding." alt="" coords="218,31,442,55"/>
-<area shape="poly" title=" " alt="" coords="166,74,268,55,263,57,167,79"/>
-<area shape="rect" href="classOSXClipboardAnyTextConverter.html" title="Convert to/from some text encoding." alt="" coords="226,80,434,105"/>
-<area shape="poly" title=" " alt="" coords="185,90,228,92,223,93,186,95"/>
-<area shape="rect" href="classOSXClipboardBMPConverter.html" title="Convert to/from some text encoding." alt="" coords="235,129,424,154"/>
-<area shape="poly" title=" " alt="" coords="167,106,268,128,263,130,166,111"/>
+<area shape="rect" title="Clipboard format converter interface." alt="" coords="5,104,170,129"/>
+<area shape="rect" href="classOSXClipboardAnyBitmapConverter.html" title="Convert to/from some text encoding." alt="" coords="218,29,442,54"/>
+<area shape="poly" title=" " alt="" coords="132,95,217,64,267,53,262,56,218,70,134,100"/>
+<area shape="rect" href="classOSXClipboardAnyTextConverter.html" title="Convert to/from some text encoding." alt="" coords="226,79,434,103"/>
+<area shape="poly" title=" " alt="" coords="185,104,228,101,223,103,186,109"/>
+<area shape="rect" href="classOSXClipboardBMPConverter.html" title="Convert to/from some text encoding." alt="" coords="235,128,424,153"/>
+<area shape="poly" title=" " alt="" coords="185,123,237,130,232,132,185,129"/>
+<area shape="rect" href="classOSXClipboardImageConverter.html" title="Clipboard image converter for macOS (PNG/TIFF)." alt="" coords="232,177,428,202"/>
+<area shape="poly" title=" " alt="" coords="134,132,218,162,268,177,263,177,217,167,133,137"/>
 <area shape="rect" href="classOSXClipboardHTMLConverter.html" title="Convert to/from HTML encoding." alt="" coords="492,5,687,30"/>
-<area shape="poly" title=" " alt="" coords="413,73,441,65,465,53,489,41,527,31,532,30,491,45,467,58,443,69,415,78"/>
+<area shape="poly" title=" " alt="" coords="413,72,441,63,489,41,533,30,528,31,491,45,443,68,414,77"/>
 <area shape="rect" href="classOSXClipboardTextConverter.html" title="Convert to/from locale text encoding." alt="" coords="497,55,682,79"/>
-<area shape="poly" title=" " alt="" coords="449,78,499,76,494,76,450,83"/>
+<area shape="poly" title=" " alt="" coords="449,77,499,75,494,76,450,83"/>
 <area shape="rect" href="classOSXClipboardUTF16Converter.html" title="Convert to/from UTF&#45;16 encoding." alt="" coords="490,104,689,129"/>
-<area shape="poly" title=" " alt="" coords="450,101,492,107,487,107,450,106"/>
+<area shape="poly" title=" " alt="" coords="450,100,492,106,487,107,450,105"/>
 <area shape="rect" href="classOSXClipboardUTF8Converter.html" title=" " alt="" coords="494,153,686,178"/>
-<area shape="poly" title=" " alt="" coords="414,106,443,115,491,138,533,153,528,152,489,143,441,120,413,112"/>
+<area shape="poly" title=" " alt="" coords="414,105,443,114,467,126,491,138,532,153,527,152,489,143,465,131,441,119,414,110"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -191,7 +193,7 @@ Public Member Functions</h2></td></tr>
 <p>Convert from <a class="el" href="classIClipboard.html" title="Clipboard interface.">IClipboard</a> format. </p>
 <p>Convert from the <a class="el" href="classIClipboard.html" title="Clipboard interface.">IClipboard</a> format to the Carbon scrap format. The input data must be in the <a class="el" href="classIClipboard.html" title="Clipboard interface.">IClipboard</a> format returned by <a class="el" href="#a4adc3b10a0bf35530b80ab1fdd286206" title="Get clipboard format.">getFormat()</a>. The return data will be in the scrap format returned by <a class="el" href="#a040be5d29b7a271ee128dfdbe35b5ca1" title="returns the scrap flavor type that this object converts from/to">getOSXFormat()</a>. </p>
 
-<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a694242473fa3c0055bc56adcd80947c9">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#ab89d56cc32ac16b4c1bc5bbc1abb6551">OSXClipboardAnyTextConverter</a>, and <a class="el" href="classOSXClipboardBMPConverter.html#a0433389c42800107700ccf83af00ce21">OSXClipboardBMPConverter</a>.</p>
+<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a694242473fa3c0055bc56adcd80947c9">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#ab89d56cc32ac16b4c1bc5bbc1abb6551">OSXClipboardAnyTextConverter</a>, <a class="el" href="classOSXClipboardBMPConverter.html#a0433389c42800107700ccf83af00ce21">OSXClipboardBMPConverter</a>, and <a class="el" href="classOSXClipboardImageConverter.html#a6afb8bcafacad280bd309404a49d2f52">OSXClipboardImageConverter</a>.</p>
 
 </div>
 </div>
@@ -221,7 +223,7 @@ Public Member Functions</h2></td></tr>
 <p>Get clipboard format. </p>
 <p>Return the clipboard format this object converts from/to. </p>
 
-<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a652e4dbf90247ee5de433d83de781439">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#a79a5035682e87fc8f5a37980318fb467">OSXClipboardAnyTextConverter</a>, <a class="el" href="classOSXClipboardBMPConverter.html#a40bc12a01d27bf381409bc1a1ca010c2">OSXClipboardBMPConverter</a>, and <a class="el" href="classOSXClipboardHTMLConverter.html#ae14e65f0c12685e7682a8ef3a7cd8571">OSXClipboardHTMLConverter</a>.</p>
+<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a652e4dbf90247ee5de433d83de781439">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#a79a5035682e87fc8f5a37980318fb467">OSXClipboardAnyTextConverter</a>, <a class="el" href="classOSXClipboardBMPConverter.html#a40bc12a01d27bf381409bc1a1ca010c2">OSXClipboardBMPConverter</a>, <a class="el" href="classOSXClipboardHTMLConverter.html#ae14e65f0c12685e7682a8ef3a7cd8571">OSXClipboardHTMLConverter</a>, and <a class="el" href="classOSXClipboardImageConverter.html#a1fa6674e47fba4cbe31e1abf3e81e0e2">OSXClipboardImageConverter</a>.</p>
 
 </div>
 </div>
@@ -250,7 +252,7 @@ Public Member Functions</h2></td></tr>
 
 <p>returns the scrap flavor type that this object converts from/to </p>
 
-<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a03fca3cb8e44fc73c2317bc4d83e7e3b">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#a96d66ea20735c6b28867de035f422e28">OSXClipboardAnyTextConverter</a>, <a class="el" href="classOSXClipboardBMPConverter.html#a308b69ada7381f5da08656271a5df28f">OSXClipboardBMPConverter</a>, <a class="el" href="classOSXClipboardHTMLConverter.html#ae15be54853418885da99f8ee12377755">OSXClipboardHTMLConverter</a>, <a class="el" href="classOSXClipboardTextConverter.html#a46afb5b787b0c89484cc94be6e020871">OSXClipboardTextConverter</a>, <a class="el" href="classOSXClipboardUTF16Converter.html#a8c582d5dc45e593e1d7b50c43531c0cb">OSXClipboardUTF16Converter</a>, and <a class="el" href="classOSXClipboardUTF8Converter.html#a5562ded9d595325d1bffe7a34ec5e39b">OSXClipboardUTF8Converter</a>.</p>
+<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a03fca3cb8e44fc73c2317bc4d83e7e3b">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#a96d66ea20735c6b28867de035f422e28">OSXClipboardAnyTextConverter</a>, <a class="el" href="classOSXClipboardBMPConverter.html#a308b69ada7381f5da08656271a5df28f">OSXClipboardBMPConverter</a>, <a class="el" href="classOSXClipboardHTMLConverter.html#ae15be54853418885da99f8ee12377755">OSXClipboardHTMLConverter</a>, <a class="el" href="classOSXClipboardImageConverter.html#a3293c22d538cfb969df2ff13238fb967">OSXClipboardImageConverter</a>, <a class="el" href="classOSXClipboardTextConverter.html#a46afb5b787b0c89484cc94be6e020871">OSXClipboardTextConverter</a>, <a class="el" href="classOSXClipboardUTF16Converter.html#a8c582d5dc45e593e1d7b50c43531c0cb">OSXClipboardUTF16Converter</a>, and <a class="el" href="classOSXClipboardUTF8Converter.html#a5562ded9d595325d1bffe7a34ec5e39b">OSXClipboardUTF8Converter</a>.</p>
 
 </div>
 </div>
@@ -280,7 +282,7 @@ Public Member Functions</h2></td></tr>
 <p>Convert to <a class="el" href="classIClipboard.html" title="Clipboard interface.">IClipboard</a> format. </p>
 <p>Convert from the carbon scrap format to the <a class="el" href="classIClipboard.html" title="Clipboard interface.">IClipboard</a> format (i.e., the reverse of <a class="el" href="#abab1bc86237e2025440afba738b6b2f3" title="Convert from IClipboard format.">fromIClipboard()</a>). </p>
 
-<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a96ea12792ffef9fa5e8c0a8872a3004d">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#a109c406470834b24be55393655ad1737">OSXClipboardAnyTextConverter</a>, and <a class="el" href="classOSXClipboardBMPConverter.html#adcbaada422156479dc0238147cbd59eb">OSXClipboardBMPConverter</a>.</p>
+<p>Implemented in <a class="el" href="classOSXClipboardAnyBitmapConverter.html#a96ea12792ffef9fa5e8c0a8872a3004d">OSXClipboardAnyBitmapConverter</a>, <a class="el" href="classOSXClipboardAnyTextConverter.html#a109c406470834b24be55393655ad1737">OSXClipboardAnyTextConverter</a>, <a class="el" href="classOSXClipboardBMPConverter.html#adcbaada422156479dc0238147cbd59eb">OSXClipboardBMPConverter</a>, and <a class="el" href="classOSXClipboardImageConverter.html#a2a5dad9b371c11b91717eabcc3e612c4">OSXClipboardImageConverter</a>.</p>
 
 </div>
 </div>
